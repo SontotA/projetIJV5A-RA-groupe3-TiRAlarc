@@ -72,3 +72,24 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Editor.meta
+Assets/Editor/Migration.meta
+Assets/Editor/Migration/AddVuforiaEnginePackage.cs
+Assets/Editor/Migration/AddVuforiaEnginePackage.cs.meta
+Assets/Resources/VuforiaConfiguration.asset
+Packages/com.ptc.vuforia.engine-10.21.3.tgz
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+ProjectSettings/ProjectSettings.asset
+QCAR/lh
+QCAR/somedata16
+Assets/Editor.meta
+Assets/Editor/Migration.meta
+Assets/Editor/Migration/AddVuforiaEnginePackage.cs
+Assets/Editor/Migration/AddVuforiaEnginePackage.cs.meta
+Assets/Resources/VuforiaConfiguration.asset
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+ProjectSettings/ProjectSettings.asset
