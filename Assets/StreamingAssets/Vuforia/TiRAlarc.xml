@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="moitiastronaut" size="0.070000 0.059182" />
+    <ImageTarget name="crosshairVuforia" size="0.100000 0.066667" />
+  </Tracking>
+</QCARConfig>

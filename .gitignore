@@ -65,6 +65,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 /Packages/com.ptc.vuforia.engine-10.20.3.tgz
+/Packages/com.ptc.vuforia.engine-10.21.3.tgz
 
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
