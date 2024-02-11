@@ -21,7 +21,7 @@ public class TargetGenerator : MonoBehaviour
         {
             float posx = Random.Range(lowerBoundary.x,upperBoundary.x);
             float posy = Random.Range(lowerBoundary.y,upperBoundary.y);
-            GameObject newTarget = Instantiate(targetPrefab, new Vector3(posx, posy, 0), Quaternion.identity);
+            GameObject newTarget = Instantiate(targetPrefab, new Vector3(posx, 0, posy), Quaternion.identity);
             newTarget.transform.parent = transform;
             targetOn= true;
         }

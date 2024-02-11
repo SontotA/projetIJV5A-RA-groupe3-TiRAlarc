@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &253208186
 Transform:
   m_ObjectHideFlags: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1534d83860078f409981305cde8338f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upperBoundary: {x: 10, y: 10}
-  lowerBoundary: {x: -10, y: -10}
+  upperBoundary: {x: 0.5, y: 0.5}
+  lowerBoundary: {x: 0, y: 0}
   targetPrefab: {fileID: 5065559621181207212, guid: 8a20e6f6a09b1d74a81a16af5702360d, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: -1826476478, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWorldCenterMode: 2
+  mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
 --- !u!81 &855168762
 AudioListener:
@@ -519,7 +519,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 253208185}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
       m_Calls: []
@@ -538,14 +550,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: 
+  mTrackableName: target
   mInitializedInEditor: 1
   mDataSetPath: 
   mAspectRatio: 1
   mImageTargetType: 3
   mWidth: 0.2
   mHeight: 0.2
-  mRuntimeTexture: {fileID: 0}
+  mRuntimeTexture: {fileID: 2800000, guid: 567fc6862850a08469c3387af6110244, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -580,7 +592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1622306506}
   mHiddenRoot: {fileID: 0}
-  mTargetName: 
+  mTargetName: target
   mDatasetName: 
   mCastedBehaviour: {fileID: 1622306506}
   mMeshFilter: {fileID: 0}
