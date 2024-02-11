@@ -16,11 +16,13 @@ public class HitTarget : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "arrow")
+        if (other.gameObject.name.Contains("Arrow"))
         {
             GameObject TGen = GameObject.Find("Target generator");
+            TGen.GetComponent<TargetGenerator>().TargetGotShot();
+            Destroy(gameObject);
         }
     }
 }
