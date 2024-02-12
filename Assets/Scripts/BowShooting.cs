@@ -17,6 +17,7 @@ public class BowShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+  
         print(Vector3.Distance(bow.transform.position, camera.transform.position));
         if(Input.GetMouseButtonDown(0))
         {
@@ -28,7 +29,7 @@ public class BowShooting : MonoBehaviour
             Rigidbody rb = _Arrow.GetComponent<Rigidbody>();
             _Arrow.transform.rotation = Quaternion.LookRotation((bow.transform.position - _Arrow.transform.position).normalized,
                                                                 Vector3.up);
-            rb.AddForce(_Arrow.transform.forward * Vector3.Distance(bow.transform.position, camera.transform.position) * 10,
+            rb.AddForce(_Arrow.transform.forward * 100,
                         ForceMode.VelocityChange);
             }
     }

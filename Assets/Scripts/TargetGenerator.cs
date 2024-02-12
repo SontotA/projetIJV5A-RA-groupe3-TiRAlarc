@@ -12,20 +12,29 @@ public class TargetGenerator : MonoBehaviour
     void Start()
     {
         targetOn = false;
+        StartCoroutine(SpawnBallon());
     }
 
+    IEnumerator SpawnBallon()
+    {
+        while (true)
+        {
+            Vector3 vec = new Vector3(Random.Range(-1f,1f),Random.Range(-1f,1f),Random.Range(-1f,1f));
+            vec = vec.normalized;
+            GameObject newTarget = Instantiate(targetPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            newTarget.transform.parent = transform;
+            newTarget.transform.localPosition = vec*upperBoundary.x;
+            targetOn= true;
+            yield return new WaitForSeconds(1);
+        }
+
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if (!targetOn) 
-        {
-            float posx = Random.Range(lowerBoundary.x,upperBoundary.x);
-            float posy = Random.Range(lowerBoundary.y,upperBoundary.y);
-            GameObject newTarget = Instantiate(targetPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            newTarget.transform.parent = transform;
-            newTarget.transform.localPosition = new Vector3(posx, 0, posy);
-            targetOn= true;
-        }
+   
+     
     }
 
     public void TargetGotShot() { targetOn = false; }
