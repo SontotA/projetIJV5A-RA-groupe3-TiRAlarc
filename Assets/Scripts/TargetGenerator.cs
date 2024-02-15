@@ -1,40 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TargetGenerator : MonoBehaviour
 {
     public Vector2 upperBoundary,lowerBoundary;
-    public GameObject targetPrefab;
-    private bool targetOn;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject[] targetPrefab;
+    public GameObject Button;
+    private bool targetOn;
+    private Coroutine Coroutine;
+    
+
+    public void StartBallon()
     {
-        targetOn = false;
-        StartCoroutine(SpawnBallon());
+        Coroutine = StartCoroutine(SpawnBallon());
     }
 
-    IEnumerator SpawnBallon()
+    public void StopBallon()
+    {
+       StopCoroutine(Coroutine);
+       Button.SetActive(true);
+    }
+
+    public IEnumerator SpawnBallon()
     {
         while (true)
         {
+            if (GameManager.instance.nbTarget == GameManager.instance.nbMaxTarget)
+            {
+                yield return new WaitForSeconds(1); 
+                continue;
+            }
             Vector3 vec = new Vector3(Random.Range(-1f,1f),Random.Range(-1f,1f),Random.Range(-1f,1f));
             vec = vec.normalized;
-            GameObject newTarget = Instantiate(targetPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject newTarget = Instantiate(targetPrefab[Random.Range(0,targetPrefab.Length)], new Vector3(0, 0, 0), Quaternion.identity);
             newTarget.transform.parent = transform;
-            newTarget.transform.localPosition = vec*upperBoundary.x;
+            newTarget.transform.localPosition = vec* Random.Range(upperBoundary.x,upperBoundary.y);
             targetOn= true;
+            GameManager.instance.nbTarget++;
             yield return new WaitForSeconds(1);
         }
 
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-   
-     
     }
 
     public void TargetGotShot() { targetOn = false; }
